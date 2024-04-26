@@ -1,1 +1,0 @@
-# Exercises for Backend Developers

@@ -1,1 +1,0 @@
-# Exercises for UI Web Developers
