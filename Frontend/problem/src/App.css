@@ -1,0 +1,44 @@
+/* Hide error messages */
+* {
+    font-size: 24px;
+}
+
+html {
+    height: 100%;
+    background-color:azure;
+}
+
+body {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe
+{
+    display: none;
+}
+
+
+img{
+    height: 250px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

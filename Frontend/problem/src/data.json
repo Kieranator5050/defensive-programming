@@ -1,0 +1,15 @@
+{
+    "cats" : [{
+        "type" : "tabby",
+        "brainCellArr" : [-1, 0, 1, 2, 3],
+        "img" : "https://www.catster.com/wp-content/uploads/2023/11/Brown-tabby-cat-that-curls-up-outdoors_viper-zero_Shutterstock.jpg"
+    }, {
+        "type" : "orange",
+        "brainCellArr" : [0],
+        "img" : "https://hips.hearstapps.com/hmg-prod/images/portrait-of-cat-sitting-outdoors-royalty-free-image-1701438826.jpg?crop=1xw:0.84366xh;center,top"
+    }, {
+        "type" : "void",
+        "brainCellArr" : [0,1,2],
+        "img" : "https://www.usatoday.com/gcdn/presto/2021/10/28/USAT/1bf79c6a-5d88-4e64-b398-c40418a79829-XXX_iStock_000017680551Large.jpg?crop=3953,2224,x0,y0&width=3200&height=1801&format=pjpg&auto=webp"
+    }]
+}

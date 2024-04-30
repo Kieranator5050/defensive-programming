@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { getCatData } from "./api";
 
 function App() {
-  const [cats, setCats] = useState();
-  const [selectedCat, setSelectedCat] = useState();
+  const [cats, setCats] = useState(null);
+  const [selectedCat, setSelectedCat] = useState(null);
 
   useEffect(() => {
       getCatData().then((data) => {
         setCats(data);
+        // To avoid infinite refreshes
         if (!selectedCat) {
           setSelectedCat(data[0]);
         }
@@ -16,10 +17,12 @@ function App() {
   }, [cats, selectedCat]);
 
   function handleTypeSelector(event) {
-    setSelectedCat(cats.find((c) => c.type === event.target.value));
+    if (Array.isArray(cats)) {
+      setSelectedCat(cats.find((c) => c?.type === event?.target?.value));
+    }
   }
 
-  let content = <p>Loading...</p>;
+  let content = <p>Loading</p>;
   if (cats && selectedCat) {
     content = (
       <form>
@@ -30,7 +33,7 @@ function App() {
             <label>Cat Type</label>
             <select onChange={handleTypeSelector}>
               {cats.map((cat) => (
-                <option key={cat.type} value={cat.type}> {cat.type} </option>
+                cat.type ? <option key={cat.type} value={cat.type}> {cat.type} </option> : null
               ))}
             </select>
           </div>
@@ -38,9 +41,9 @@ function App() {
           <div className="form-group">
             <label>Brain Cells</label>
             <select>
-              {selectedCat.brainCellArr.map((brainCell) => (
+              {selectedCat?.brainCellArr && Array.isArray(selectedCat.brainCellArr) ? selectedCat.brainCellArr.map((brainCell) => (
                 <option key={brainCell} value={brainCell}> {brainCell} </option>
-              ))}
+              )) : null}
             </select>
           </div>
         </div>
